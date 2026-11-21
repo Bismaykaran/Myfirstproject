@@ -1,0 +1,214 @@
+/* =========================================================
+   DESIGN TOKENS
+   Palette:  #1F3B2C (forest - left panel)  #FAF7F0 (cream - right panel)
+             #E8735B (coral - accent/button) #6B8F71 (sage - muted)
+             #2B2B2B (ink - text)
+   Type:     Fraunces (display / serif)  Inter (body)
+   ========================================================= */
+:root {
+  --forest: #1F3B2C;
+  --cream: #FAF7F0;
+  --coral: #E8735B;
+  --sage: #8FAF93;
+  --ink: #2B2B2B;
+  --muted: #8A8A82;
+  --radius: 10px;
+
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+
+/* ===== LEFT PANEL ===== */
+.brand-panel {
+  background: var(--forest);
+  color: var(--cream);
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 4rem;
+  overflow: hidden;
+}
+.brand-panel__content { position: relative; z-index: 2; max-width: 420px; }
+
+.logo {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.4rem;
+  margin-bottom: 3rem;
+}
+.logo .dot { color: var(--coral); }
+
+.brand-panel h1 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  line-height: 1.25;
+  margin-bottom: 2rem;
+}
+
+.quote {
+  font-size: 0.95rem;
+  color: var(--sage);
+  border-left: 2px solid var(--coral);
+  padding-left: 1rem;
+  font-style: italic;
+}
+
+/* decorative leaf shapes, purely CSS */
+.leaf {
+  position: absolute;
+  border-radius: 50% 0 50% 50%;
+  background: #274935;
+  z-index: 1;
+}
+.leaf--one {
+  width: 260px;
+  height: 260px;
+  bottom: -80px;
+  right: -60px;
+  transform: rotate(30deg);
+}
+.leaf--two {
+  width: 140px;
+  height: 140px;
+  top: -40px;
+  left: -40px;
+  transform: rotate(-20deg);
+  background: #17301F;
+}
+
+/* ===== RIGHT PANEL ===== */
+.form-panel {
+  background: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-card h2 {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 2.2rem;
+}
+
+.login-card label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+  margin-top: 1.1rem;
+}
+
+.login-card input[type="email"],
+.login-card input[type="password"] {
+  border: 1px solid #DDD8CC;
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 0.8rem 1rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+.login-card input:focus {
+  border-color: var(--coral);
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.3rem;
+  font-size: 0.85rem;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--muted);
+  margin: 0;
+}
+.checkbox input { accent-color: var(--coral); }
+
+.link-muted { color: var(--muted); }
+.link-muted:hover { color: var(--coral); }
+
+.btn-primary {
+  margin-top: 2rem;
+  background: var(--coral);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.9rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+.btn-primary:hover {
+  background: #D65F46;
+  transform: translateY(-1px);
+}
+
+.signup-line {
+  text-align: center;
+  margin-top: 1.6rem;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+.link-accent {
+  color: var(--coral);
+  font-weight: 600;
+}
+
+a { text-decoration: none; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 860px) {
+  .wrapper { grid-template-columns: 1fr; }
+  .brand-panel { padding: 3rem 2rem; min-height: 260px; }
+  .brand-panel h1 { font-size: 1.6rem; }
+  .quote { display: none; }
+  .form-panel { padding: 2.5rem 1.5rem; }
+}
+
+/* Visible keyboard focus for accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--coral);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-primary { transition: none; }
+}

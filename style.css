@@ -1,9 +1,16 @@
-.ex{
-    background: brown;
+body {
+    background-color: lightblue;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding-top: 100px;
 }
-#xx{
-    background:red;
+
+h1 {
+    color: darkblue;
+    font-size: 40px;
 }
-.box{
-    
+
+p {
+    color: black;
+    font-size: 20px;
 }

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <link rel="stylesheet" href="about.css"> 
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="wrapper">
+
+    <!-- ===== LEFT PANEL: branding ===== -->
+    <aside class="brand-panel">
+      <div class="brand-panel__content">
+        <div class="logo">Sprout<span class="dot">.</span></div>
+        <h1>Grow something<br />worth logging<br />in for.</h1>
+        <p class="quote">"Small daily habits build big results."</p>
+      </div>
+      <div class="leaf leaf--one"></div>
+      <div class="leaf leaf--two"></div>
+    </aside>
+
+    <!-- ===== RIGHT PANEL: login form ===== -->
+    <main class="form-panel">
+      <form class="login-card" action="#" method="post">
+        <h2>Welcome back</h2>
+        <p class="subtitle">Log in to continue to your account.</p>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required />
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required />
+
+        <div class="form-row">
+          <label class="checkbox">
+            <input type="checkbox" name="remember" />
+            <span>Remember me</span>
+          </label>
+          <a href="#" class="link-muted">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="btn-primary">Log in</button>
+
+        <p class="signup-line">Don't have an account? <a href="#" class="link-accent">Sign up</a></p>
+      </form>
+    </main>
+
+  </div>
+
+</body>
+</html>
